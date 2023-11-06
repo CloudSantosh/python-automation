@@ -2,6 +2,7 @@ import os
 # define the file path and name
 file_path="test.txt"
 
+
 #check if the file already exits
 
 if(os.path.exists(file_path)):
