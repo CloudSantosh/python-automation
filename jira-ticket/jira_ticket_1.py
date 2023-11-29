@@ -1,12 +1,13 @@
 import requests
 from requests.auth import HTTPBasicAuth
+import access_env_variable
 
 # Jira API endpoint for creating an issue
 jira_api_url = "https://santoshtechguyjira.atlassian.net/rest/api/2/issue/"
 
 # Jira username and API token
 jira_username = "santoshtechguy@gmail.com"
-api_token = "ATATT3xFfGF06U0cT1KhLXWwbYwxbeQfelLPpiWs4-esuzqA5A-ulj761yK99-DuSUJ6ghWTU2WBQRoI3JRULQEnHGtZKrccc81jI_fpqmsighgSvi-9bqwwz0MpkwJ5fbLB0NuxFAeKeeCygoaQ3nBaXCcp3d1E5dE7lEiHSZVthfEw5CPUTXM=74563190"
+api_token = access_env_variable.jira_api_token
 
 # Issue details
 issue_data = {

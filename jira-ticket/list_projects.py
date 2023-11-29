@@ -3,10 +3,13 @@
 import requests
 from requests.auth import HTTPBasicAuth
 import json
+import access_env_variable # importing the python code as modules which access the environment variable
+
 # copy the url link of your jira dashboard upto .net
 url = "https://santoshtechguyjira.atlassian.net/rest/api/3/project"
+
 # copy paste the Jira API token
-API_TOKEN="ATATT3xFfGF06U0cT1KhLXWwbYwxbeQfelLPpiWs4-esuzqA5A-ulj761yK99-DuSUJ6ghWTU2WBQRoI3JRULQEnHGtZKrccc81jI_fpqmsighgSvi-9bqwwz0MpkwJ5fbLB0NuxFAeKeeCygoaQ3nBaXCcp3d1E5dE7lEiHSZVthfEw5CPUTXM=74563190"
+API_TOKEN=access_env_variable.jira_api_token
 
 auth = HTTPBasicAuth("santoshtechguy@gmail.com", API_TOKEN)
 
