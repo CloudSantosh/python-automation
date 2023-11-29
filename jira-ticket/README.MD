@@ -12,14 +12,14 @@ Creating a Jira ticket using the Jira REST API with Python involves sending an H
     ```python
     import requests
     from requests.auth import HTTPBasicAuth
-    import json
+    import access_env_variable
 
     # Jira API endpoint for creating an issue
     jira_api_url = "https://your-jira-instance/rest/api/2/issue/"
 
     # Jira username and API token
     jira_username = "your-username"
-    api_token = "your-api-token"
+    api_token = "access the jira api token via import python code access_env_variable"
 
     # Issue details
     issue_data = {
