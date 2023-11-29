@@ -67,3 +67,5 @@ Creating a Jira ticket using the Jira REST API with Python involves sending an H
     This script will send a POST request to the Jira REST API, creating a new issue based on the provided data.
 
 Make sure to review the Jira REST API documentation for more details on available endpoints and fields: [Jira REST API Documentation](https://developer.atlassian.com/cloud/jira/platform/rest/v3/). Additionally, always ensure that you handle your API tokens securely and follow best practices for authentication.
+
+https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-issues/#api-rest-api-3-issue-post
