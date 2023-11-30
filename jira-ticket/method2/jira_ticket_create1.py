@@ -3,13 +3,19 @@
 import requests
 from requests.auth import HTTPBasicAuth
 import json
-import access_env_variable
+from dotenv import load_dotenv
+import os
+
 
 url = "https://santoshtechguyjira.atlassian.net/rest/api/3/issue"
 
-API_TOKEN= access_env_variable.jira_api_token
-print(API_TOKEN)
+# This line brings all environment variables from .env into os.environ
+load_dotenv()
 
+# Accessing API token from hidden .env
+API_TOKEN= os.environ['JIRA_API_TOKEN']
+
+# Making HTTPbasic authentication
 auth = HTTPBasicAuth("santoshtechguy@gmail.com", API_TOKEN)
 
 headers = {

@@ -9,7 +9,7 @@ def load_environment_variables(file_path):
 
 # Specify the path to your environment variables file
 # user needs to create directory name environment_variable and create hidden  file  as .env and store token
-file_path = "./environment_variables/.env"
+file_path = "environment_variable/.env"
 
 # Load environment variables from the file
 load_environment_variables(file_path)
@@ -18,5 +18,5 @@ load_environment_variables(file_path)
 jira_api_token = os.environ.get("JIRA_API_TOKEN")
 #database_url = os.environ.get("DATABASE_URL")
 
-#print("Jira API Token:", jira_api_token)
+print("Jira API Token:", jira_api_token)
 #print("Database URL:", database_url)

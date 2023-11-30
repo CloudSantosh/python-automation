@@ -1,15 +1,19 @@
 # This code sample uses the 'requests' library:
 # http://docs.python-requests.org
+import os
 import requests
 from requests.auth import HTTPBasicAuth
 import json
-import access_env_variable # importing the python code as modules which access the environment variable
+from dotenv import load_dotenv
 
 # copy the url link of your jira dashboard upto .net
 url = "https://santoshtechguyjira.atlassian.net/rest/api/3/project"
 
-# copy paste the Jira API token
-API_TOKEN= access_env_variable.jira_api_token
+# loading environment from .env file to os.environ()
+load_dotenv()
+
+# Accessing JIRA API TOKEN as dictionary
+API_TOKEN= os.environ['JIRA_API_TOKEN']
 
 auth = HTTPBasicAuth("santoshtechguy@gmail.com", API_TOKEN)
 

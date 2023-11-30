@@ -1,14 +1,17 @@
 import requests
 from requests.auth import HTTPBasicAuth
-import access_env_variable
+import os
+from dotenv import load_dotenv
 
 # Jira API endpoint for creating an issue
 jira_api_url = "https://santoshtechguyjira.atlassian.net/rest/api/2/issue/"
 
+# loading API token from .env hidden file under os.environ()
+load_dotenv()
 # Jira username and API token
 jira_username = "santoshtechguy@gmail.com"
-api_token = access_env_variable.jira_api_token
-print(api_token)
+api_token = os.environ['JIRA_API_TOKEN']
+
 
 # Issue details
 issue_data = {
@@ -16,7 +19,7 @@ issue_data = {
         "project": {"key": "TP"},
         "summary": "Second jira Ticket",
         "description": "Issue Description",
-        "issue type": {"id": "10008"},
+        "issuetype": {"id": "10008"},
         # Add any other necessary fields here
     }
 }
