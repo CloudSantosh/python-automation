@@ -1,11 +1,12 @@
 import requests
-import os
-from dotenv import load_dotenv
 
 
 def github_pull_info(response, response_status):
     if response_status==True:
-        print(response.json())
+        complete_detail=response.json()
+        for every_user_count in range(len(complete_detail)):
+            print(complete_detail[every_user_count]['user']['login'])
+
     else:
         print(f"Failed to fetch repository information. Status Code: {response.status_code}")
         print(response.text)
@@ -27,7 +28,6 @@ def check_response_status(response):
     else:
         return False
 
-
 # Asking from user to enter owner of Gitub
 owner=input("Enter the Owner Name of GitHub:\n")
 
@@ -45,6 +45,8 @@ response_status=check_response_status(response)
 
 # making Github pull information based on response status.
 github_pull_info(response, response_status)
+
+
 
 
 
