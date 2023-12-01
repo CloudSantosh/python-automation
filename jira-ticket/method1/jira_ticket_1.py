@@ -16,7 +16,7 @@ issue_data = {
         "project": {"key": "TP"},
         "summary": "Second jira Ticket",
         "description": "Issue Description",
-        "issue type": {"id": "10008"},
+        "issuetype": {"id": "10008"},
         # Add any other necessary fields here
     }
 }

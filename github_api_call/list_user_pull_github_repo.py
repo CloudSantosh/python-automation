@@ -28,24 +28,13 @@ def check_response_status(response):
     else:
         return False
 
-# Asking from user to enter owner of Gitub
-owner=input("Enter the Owner Name of GitHub:\n")
-
-# Asking from user repository of owner owns
-repo=input("Enter the repository name to Access:\n")
-
-# Calling function to construct full URL on the basis of github owner and repository entered by users
-full_url=construct_full_url(owner, repo)
-
-# Making GitHub API call based on full_url
-response=api_request(full_url)
-
-#Checking the status of API call
-response_status=check_response_status(response)
-
-# making Github pull information based on response status.
-github_pull_info(response, response_status)
-
+if __name__ == "__main__":
+    owner = input("Enter the Owner Name of GitHub:\n")      # Asking from user to enter owner of Gitub
+    repo = input("Enter the repository name to Access:\n")  # Asking from user repository of owner owns
+    full_url = construct_full_url(owner, repo)              # Calling function to create full URL based on  github owner and repository
+    response = api_request(full_url)                        # Making GitHub API call based on full_url
+    response_status = check_response_status(response)       # Checking the status of API call
+    github_pull_info(response, response_status)             # making Github pull information based on response status.
 
 
 
