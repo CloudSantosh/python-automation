@@ -60,4 +60,6 @@ response = requests.request(
    auth=auth
 )
 
+print(json.dumps(json.loads(response.text)))
+
 print(json.dumps(json.loads(response.text), sort_keys=True, indent=4, separators=(",", ": ")))

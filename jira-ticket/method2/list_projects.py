@@ -27,7 +27,7 @@ response = requests.request(
    headers=headers,
    auth=auth
 )
-#print(json.dumps(json.loads(response.text), sort_keys=True, indent=4, separators=(",", ": ")))
+print(json.dumps(json.loads(response.text), sort_keys=True, indent=4, separators=(",", ": ")))
 jira_projects_info=json.loads(response.text)
 for each_project_info in jira_projects_info:
     print(f'Project Name : {each_project_info["name"]}')
