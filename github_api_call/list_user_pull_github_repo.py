@@ -4,8 +4,9 @@ import requests
 def github_pull_info(response, response_status):
     if response_status==True:
         complete_detail=response.json()
+        print("\n*** Listing users login name who Forked this repo ***")
         for every_user_count in range(len(complete_detail)):
-            print(complete_detail[every_user_count]['user']['login'])
+            print(complete_detail[every_user_count]['owner']['login'])
 
     else:
         print(f"Failed to fetch repository information. Status Code: {response.status_code}")
@@ -13,8 +14,9 @@ def github_pull_info(response, response_status):
 
 
 def construct_full_url(owner,repo):
-    repo_url="https://api.github.com/repos/{owner}/{repo}/pulls"
+    repo_url="https://api.github.com/repos/{owner}/{repo}/forks"
     full_url=repo_url.format(owner=owner, repo=repo)
+    print("\n*** Complete URL ***")
     print(full_url)
     return full_url
 

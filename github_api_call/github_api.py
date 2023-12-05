@@ -1,9 +1,9 @@
 import requests
 import json
 # refer https://docs.github.com/en/rest/commits/commits?apiVersion=2022-11-28
-#response1=requests.get("https://api.github.com/repos/CloudSantosh/application/pulls")
+response1=requests.get("https://api.github.com/repos/CloudSantosh/application/pulls")
 
-#response2=requests.get("https://api.github.com/repos/CloudSantosh/application/properties/values")
+response2=requests.get("https://api.github.com/repos/CloudSantosh/application/properties/values")
 
 response3=requests.get("https://api.github.com/repos/CloudSantosh/application/commits")
 issue=requests.get("https://api.github.com/repos/CloudSantosh/application/secret-scanning/alerts")

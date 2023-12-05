@@ -9,7 +9,7 @@ import os
 app=Flask(__name__)
 
 @app.route("/createjira", methods=['POST'])
-def hello():
+def createJIRA():
     url = "https://santoshtechguyjira.atlassian.net/rest/api/3/issue"
 
     # This line brings all environment variables from .env into os.environ
@@ -33,8 +33,8 @@ def hello():
                     {
                         "content": [
                             {
-                                "text": "This is first Jira ticket.",
-                                "type": "text"
+                                 "text": "Order entry fails when selecting supplier.",
+                                 "type": "text"
                             }
                         ],
                         "type": "paragraph"
@@ -50,7 +50,7 @@ def hello():
             "project": {
                 "key": "TP"
             },
-            "summary": "First Jira Ticket",
+            "summary": "main order flow broken",
         },
         "update": {}
     })
@@ -65,4 +65,5 @@ def hello():
 
     return json.dumps(json.loads(response.text), sort_keys=True, indent=4, separators=(",", ": "))
 
-app.run('0.0.0.0')
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)

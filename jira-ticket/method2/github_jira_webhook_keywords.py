@@ -8,7 +8,7 @@ import os
 # creating a flask app instance
 app = Flask(__name__)
 
-@app.route("/github-webhook", methods=['POST'])
+@app.route("/github_webhook", methods=['POST'])
 def github_webhook():
     # Ensure that the request is a JSON payload
     if request.headers['Content-Type'] == 'application/json':

@@ -11,12 +11,13 @@ load_dotenv()
 #print(os.getenv('OWNER'))
 #print(os.getenv('REPO'))
 
-print(os.environ['OWNER'])
-print(os.environ['REPO'])
+#print(os.environ['OWNER'])
+#print(os.environ['REPO'])
 
 
 # GitHub API endpoint for a public repository
-repo_url = "https://api.github.com/repos/{owner}/{repo}/"
+repo_url = "https://api.github.com/repos/{owner}/{repo}"
+
 
 # Replace {owner} and {repo} with the actual owner and repository name
 owner = os.getenv('OWNER')

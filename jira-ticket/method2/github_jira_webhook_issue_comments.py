@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 
 # Endpoint for GitHub Webhook
-@app.route("/github-webhook", methods=['POST'])
+@app.route("/github_webhook", methods=['POST'])
 def github_webhook():
     # Load environment variables
     load_dotenv()
@@ -23,7 +23,7 @@ def github_webhook():
         issue_comment = payload['comment']['body']
 
         # Specify the keywords to trigger Jira creation
-        keywords = ['/jira', '/Jira','/JIRA']
+        keywords = ['/jira', '/Jira', '/JIRA']
 
         # Check if any of the keywords is present in the issue comment
         if any(keyword in issue_comment for keyword in keywords):
@@ -46,14 +46,14 @@ def create_jira_issue():
         "Content-Type": "application/json"
     }
 
-    payload = {
+    payload = json.dumps({
         "fields": {
             "description": {
                 "content": [
                     {
                         "content": [
                             {
-                                "text": "This is first Jira ticket.",
+                                "text": "Jira ticket with correspond text has been created",
                                 "type": "text"
                             }
                         ],
@@ -69,10 +69,10 @@ def create_jira_issue():
             "project": {
                 "key": "TP"
             },
-            "summary": "First Jira Ticket",
+            "summary": "Jira Ticket",
         },
         "update": {}
-    }
+    })
 
     response = requests.request(
         "POST",
