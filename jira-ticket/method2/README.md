@@ -180,3 +180,6 @@ console.log(`Response: ${response.status} ${response.statusText}`);
 console.log(await response.json());
 
 ```
+
+## how to access issuetype:
+https://santoshtechguyjira.atlassian.net/jira/software/projects/TP/settings/issuetypes/10008

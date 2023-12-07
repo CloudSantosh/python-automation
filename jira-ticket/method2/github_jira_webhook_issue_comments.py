@@ -27,7 +27,7 @@ def github_webhook():
 
         # Check if any of the keywords is present in the issue comment
         if any(keyword in issue_comment for keyword in keywords):
-            create_jira_issue()
+            create_jira_issue() # Now python flask application call JIRA API
 
     return jsonify({'message': 'Webhook received successfully'}), 200
 
@@ -64,7 +64,7 @@ def create_jira_issue():
                 "version": 1
             },
             "issuetype": {
-                "id": "10008"
+                "id": "10006"
             },
             "project": {
                 "key": "TP"

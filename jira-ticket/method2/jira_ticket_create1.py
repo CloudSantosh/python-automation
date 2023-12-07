@@ -23,7 +23,7 @@ headers = {
   "Content-Type": "application/json"
 }
 
-payload = json.dumps( {
+payload = json.dumps({
   "fields": {
     "description": {
       "content": [
@@ -41,7 +41,7 @@ payload = json.dumps( {
       "version": 1
     },
     "issuetype": {
-      "id": "10008"
+      "id": "10006"
     },
 
     "project": {
@@ -50,7 +50,7 @@ payload = json.dumps( {
     "summary": "First Jira Ticket",
   },
   "update": {}
-} )
+})
 
 response = requests.request(
    "POST",
@@ -60,6 +60,5 @@ response = requests.request(
    auth=auth
 )
 
-print(json.dumps(json.loads(response.text)))
 
 print(json.dumps(json.loads(response.text), sort_keys=True, indent=4, separators=(",", ": ")))
